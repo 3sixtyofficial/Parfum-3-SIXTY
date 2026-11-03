@@ -6,11 +6,6 @@
     <title>3 SIXTY - Official Collection (Apparel & Perfume)</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        #varian {
-    height: auto !important;
-    max-height: 50px !important;
-    overflow: hidden !important;
-}
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap');
         body { font-family: 'Poppins', sans-serif; background: #0f0f11; color: #f3f4f6; overflow-x: hidden; scroll-behavior: smooth; padding-bottom: 90px; }
         h1, h2, h3, .font-playfair { font-family: 'Playfair Display', serif; }
@@ -33,12 +28,11 @@
         
         .bottom-footer-nav { background: #121215; border-top: 1px solid rgba(212, 175, 55, 0.2); padding: 15px 0; text-align: center; margin-top: 60px; }
         
-        .img-grid-container { display: grid; gap: 3px; padding: 3px; background: #121215; max-height: 250px; overflow: hidden; } }
+        .img-grid-container { display: grid; gap: 3px; padding: 3px; background: #121215; max-height: 250px; overflow: hidden; }
         .img-grid-item { background: #18181b; overflow: hidden; border-radius: 4px; cursor: pointer; display: flex; align-items: center; justify-content: center; height: 220px; transition: opacity 0.2s; }
         .img-grid-item:hover { opacity: 0.85; }
         .img-grid-item img { width: 100%; height: 100%; object-fit: contain; object-position: center; }
 
-        /* Diperbesar agar foto kaos terlihat besar dan jelas */
         .img-full-container { position: relative; width: 100%; height: 280px; background: #121215; overflow: hidden; cursor: pointer; display: flex; align-items: center; justify-content: center; }
         .img-full-container img { width: 100%; height: 100%; object-fit: contain; object-position: center; transition: transform 0.4s ease; }
         .img-full-container:hover img { transform: scale(1.03); }
@@ -139,7 +133,7 @@
                     </div>
                 </div>
 
-                <!-- 3. White Edition (Kaos) -->
+                <!-- 3. White Edition (Kaos) - Diubah jadi 2 Foto -->
                 <div class="product-card">
                     <div class="img-grid-container" style="grid-template-columns: repeat(2, 1fr);">
                         <div class="img-grid-item" onclick="openLightbox('92061.png', 'White Edition - Model', 'Tampilan Model Putih', 'Kaos')"><img src="92061.png" alt="White Model"></div>
@@ -429,7 +423,7 @@
             </div>
         </section>
 
-        <!-- Formulir Pemesanan Universal (Kaos & Parfum) -->
+        <!-- Formulir Pemesanan Universal (Dinamis Kaos & Parfum) -->
         <section class="max-w-md mx-auto px-4 py-8 mb-12 reveal-on-scroll" id="order-section">
             <div class="bg-[#18181b] p-7 rounded-2xl border border-yellow-500/30 shadow-2xl relative">
                 <h2 class="text-2xl font-playfair font-bold text-center mb-6 dark-gradient">Formulir Pesanan</h2>
@@ -444,45 +438,18 @@
                     </div>
                     <div>
                         <label class="block text-xs font-semibold uppercase tracking-wider text-yellow-500 mb-1.5">Kategori Produk</label>
-                        <select id="kategori" required class="w-full bg-[#121215] border border-zinc-700 rounded-xl px-4 py-3 text-zinc-100 text-sm focus:outline-none focus:border-yellow-500">
+                        <select id="kategori" required onchange="updateVarianOpsi()" class="w-full bg-[#121215] border border-zinc-700 rounded-xl px-4 py-3 text-zinc-100 text-sm focus:outline-none focus:border-yellow-500">
                             <option value="" disabled selected>-- Pilih Kategori --</option>
-                            <option value="Kaos 3 SIXTY">Kaos 3 SIXTY </option>
-                            <option value="Parfum 3 SIXTY">Parfum 3 SIXTY </option>
+                            <option value="Kaos 3 SIXTY">Kaos 3 SIXTY</option>
+                            <option value="Parfum 3 SIXTY">Parfum 3 SIXTY</option>
                         </select>
                     </div>
                     <div>
                         <label class="block text-xs font-semibold uppercase tracking-wider text-yellow-500 mb-1.5">Pilihan Varian / Warna & Ukuran</label>
-                        <input type=  <select id="varian" required class="w-full bg-[#121215] border border-zinc-700 rounded-xl px-4 py-3 text-zinc-100 text-sm focus:outline-none focus:border-yellow-500">
-                           <option value="" disabled selected>-- Pilih Varian / Warna --</option>
-                           <optgroup label="Kaos (Warna & Ukuran)">
-                               <option value="Kaos White - Size S">Kaos White - Size S</option>
-                               <option value="Kaos White - Size M">Kaos White - Size M</option>
-                               <option value="Kaos White - Size L">Kaos White - Size L</option>
-                               <option value="Kaos White - Size XL">Kaos White - Size XL</option>
-                               <option value="Kaos White - Size XXL">Kaos White - Size XXL</option>
-                               <option value="Kaos Black - Size S">Kaos Black - Size S</option>
-                               <option value="Kaos Black - Size M">Kaos Black - Size M</option>
-                               <option value="Kaos Black - Size L">Kaos Black - Size L</option>
-                               <option value="Kaos Black - Size XL">Kaos Black - Size XL</option>
-                               <option value="Kaos Black - Size XXL">Kaos Black - Size XXL</option>
-                               <option value="Kaos Navy - Size L">Kaos Navy - Size L</option>
-                               <option value="Kaos Orange - Size L">Kaos Orange - Size L</option>
-                               <option value="Kaos Pink - Size L">Kaos Pink - Size L</option>
-                               <option value="Kaos Light Blue - Size L">Kaos Light Blue - Size L</option>
-                               <option value="Kaos Cream - Size L">Kaos Cream - Size L</option>
-                               <option value="Kaos Maroon - Size L">Kaos Maroon - Size L</option>
-                           </optgroup>
-                           <optgroup label="Parfum 3 SIXTY">
-                               <option value="Parfum AR-ONE">AR-ONE</option>
-                               <option value="Parfum BLACK CODE">BLACK CODE</option>
-                               <option value="Parfum LADY CHARM">LADY CHARM</option>
-                               <option value="Parfum WHITE ORCHID">WHITE ORCHID</option>
-                               <option value="Parfum ROYAL MAN">ROYAL MAN</option>
-                               <option value="Parfum RS-ONE">RS-ONE</option>
-                               <option value="Parfum SIGNATURE">SIGNATURE</option>
-                               <option value="Parfum MEN'S CLUB">MEN'S CLUB</option>
-                           </optgroup>
+                        <select id="varian" required class="w-full bg-[#121215] border border-zinc-700 rounded-xl px-4 py-3 text-zinc-100 text-sm focus:outline-none focus:border-yellow-500">
+                           <option value="" disabled selected>-- Pilih Kategori Terlebih Dahulu --</option>
                        </select>
+                    </div>
                     <div>
                         <label class="block text-xs font-semibold uppercase tracking-wider text-yellow-500 mb-1.5">Jumlah Pcs</label>
                         <input type="number" id="jumlah" min="1" value="1" required class="w-full bg-[#121215] border border-zinc-700 rounded-xl px-4 py-3 text-zinc-100 text-sm focus:outline-none focus:border-yellow-500">
@@ -547,14 +514,62 @@
         }
         window.addEventListener('scroll', checkScroll);
 
+        // Fungsi Dinamis Mengubah Pilihan Varian/Warna Sesuai Kategori
+        function updateVarianOpsi() {
+            const kategori = document.getElementById('kategori').value;
+            const varianSelect = document.getElementById('varian');
+            
+            varianSelect.innerHTML = '<option value="" disabled selected>-- Pilih Varian / Warna & Ukuran --</option>';
+
+            if (kategori === 'Kaos 3 SIXTY') {
+                const kaosOptions = [
+                    "Kaos Pink Edition - Size S", "Kaos Pink Edition - Size M", "Kaos Pink Edition - Size L", "Kaos Pink Edition - Size XL", "Kaos Pink Edition - Size XXL",
+                    "Kaos Cream Edition - Size S", "Kaos Cream Edition - Size M", "Kaos Cream Edition - Size L", "Kaos Cream Edition - Size XL", "Kaos Cream Edition - Size XXL",
+                    "Kaos White Edition - Size S", "Kaos White Edition - Size M", "Kaos White Edition - Size L", "Kaos White Edition - Size XL", "Kaos White Edition - Size XXL",
+                    "Kaos Light Blue Edition - Size S", "Kaos Light Blue Edition - Size M", "Kaos Light Blue Edition - Size L", "Kaos Light Blue Edition - Size XL", "Kaos Light Blue Edition - Size XXL",
+                    "Kaos Orange Edition - Size S", "Kaos Orange Edition - Size M", "Kaos Orange Edition - Size L", "Kaos Orange Edition - Size XL", "Kaos Orange Edition - Size XXL",
+                    "Kaos Navy Edition - Size S", "Kaos Navy Edition - Size M", "Kaos Navy Edition - Size L", "Kaos Navy Edition - Size XL", "Kaos Navy Edition - Size XXL",
+                    "Kaos Maroon Edition - Size S", "Kaos Maroon Edition - Size M", "Kaos Maroon Edition - Size L", "Kaos Maroon Edition - Size XL", "Kaos Maroon Edition - Size XXL",
+                    "Kaos Black Edition - Size S", "Kaos Black Edition - Size M", "Kaos Black Edition - Size L", "Kaos Black Edition - Size XL", "Kaos Black Edition - Size XXL"
+                ];
+                kaosOptions.forEach(opt => {
+                    const el = document.createElement('option');
+                    el.value = opt;
+                    el.textContent = opt;
+                    varianSelect.appendChild(el);
+                });
+            } else if (kategori === 'Parfum 3 SIXTY') {
+                const parfumOptions = [
+                    "Parfum AR-ONE", "Parfum BLACK CODE", "Parfum LADY CHARM", "Parfum WHITE ORCHID", 
+                    "Parfum ROYAL MAN", "Parfum RS-ONE", "Parfum SIGNATURE", "Parfum MEN'S CLUB"
+                ];
+                parfumOptions.forEach(opt => {
+                    const el = document.createElement('option');
+                    el.value = opt;
+                    el.textContent = opt.replace("Parfum ", "");
+                    varianSelect.appendChild(el);
+                });
+            }
+        }
+
         function openLightbox(imgSrc, title, desc, category) {
             document.getElementById("lightboxImg").src = imgSrc;
             document.getElementById("lightboxTitle").textContent = title;
             document.getElementById("lightboxDesc").textContent = desc;
             document.getElementById("lightboxOrderBtn").onclick = function() {
                 closeLightbox();
-                document.getElementById("kategori").value = category === 'Kaos' ? 'Kaos 3 SIXTY' : 'Parfum 3 SIXTY';
-                document.getElementById("varian").value = title;
+                const katSelect = document.getElementById("kategori");
+                katSelect.value = category === 'Kaos' ? 'Kaos 3 SIXTY' : 'Parfum 3 SIXTY';
+                updateVarianOpsi(); // Update opsi dropdown sesuai kategori
+                
+                // Cari opsi yang cocok di dropdown varian
+                const varianSelect = document.getElementById("varian");
+                for (let i = 0; i < varianSelect.options.length; i++) {
+                    if (varianSelect.options[i].text.includes(title.replace(" - Model", "").replace(" - Studio", "").replace(" - Detail", ""))) {
+                        varianSelect.selectedIndex = i;
+                        break;
+                    }
+                }
                 document.getElementById("order-section").scrollIntoView({ behavior: 'smooth' });
             };
             document.getElementById("lightboxModal").classList.remove("hidden");
