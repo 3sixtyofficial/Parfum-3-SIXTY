@@ -28,10 +28,11 @@
         
         .bottom-footer-nav { background: #121215; border-top: 1px solid rgba(212, 175, 55, 0.2); padding: 15px 0; text-align: center; margin-top: 60px; }
         
-        /* Disamakan tingginya agar semua kartu sejajar */
-        .img-grid-container { display: grid; gap: 3px; padding: 3px; background: #121215; height: 260px; overflow: hidden; grid-template-columns: repeat(2, 1fr); }
+        /* KUNCI TINGGI SAMA PERSIS DI SEMUA LAYAR (HP & LAPTOP) */
+        .img-grid-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3px; padding: 3px; background: #121215; height: 260px; overflow: hidden; }
         .img-grid-item { background: #18181b; overflow: hidden; border-radius: 4px; cursor: pointer; display: flex; align-items: center; justify-content: center; height: 100%; transition: opacity 0.2s; }
         .img-grid-item:hover { opacity: 0.85; }
+        /* Menggunakan contain agar seluruh foto terlihat jelas dan tidak terpotong */
         .img-grid-item img { width: 100%; height: 100%; object-fit: contain; object-position: center; }
 
         .img-full-container { position: relative; width: 100%; height: 260px; background: #121215; overflow: hidden; cursor: pointer; display: flex; align-items: center; justify-content: center; }
@@ -92,11 +93,12 @@
             
             <div class="grid grid-cols-2 gap-2.5 md:gap-6 max-w-5xl mx-auto">
                 
-                <!-- 1. Pink Edition (Kaos) -->
+                <!-- 1. Pink Edition (Kaos) - Dikembalikan 3 Foto & Terlihat Jelas -->
                 <div class="product-card">
-                    <div class="img-grid-container">
+                    <div class="img-grid-container" style="grid-template-rows: repeat(2, 1fr);">
                         <div class="img-grid-item" onclick="openLightbox('90459.jpg', 'Pink Edition - Model', 'Tampilan Model Pink', 'Kaos')"><img src="90459.jpg" alt="Pink Model"></div>
                         <div class="img-grid-item" onclick="openLightbox('90462.jpg', 'Pink Edition - Detail', 'Tampilan Detail Pink', 'Kaos')"><img src="90462.jpg" alt="Pink Detail"></div>
+                        <div class="img-grid-item" onclick="openLightbox('91941.jpg', 'Pink Edition - Studio', 'Tampilan Studio Pink', 'Kaos')" style="grid-column: span 2;"><img src="91941.jpg" alt="Pink Studio"></div>
                     </div>
                     <div class="p-3 flex-grow flex flex-col justify-between text-center">
                         <div>
@@ -317,4 +319,277 @@
                     </div>
                 </div>
 
-                <!-- 12. WHITE OR
+                <!-- 12. WHITE ORCHID (Parfum) -->
+                <div class="product-card">
+                    <div class="perfume-img-container" onclick="openLightbox('92448.jpg', 'WHITE ORCHID Parfum', 'Sensual, Warm, Oriental, Floral', 'Parfum')">
+                        <img src="92448.jpg" alt="WHITE ORCHID">
+                    </div>
+                    <div class="p-3 flex-grow flex flex-col justify-between text-center">
+                        <div>
+                            <div class="flex items-center justify-center gap-1.5 mb-1">
+                                <img src="90427.jpg" alt="Logo" class="w-4 h-4 rounded-full border border-yellow-500/40 object-cover">
+                                <span class="text-[8px] tracking-widest uppercase font-semibold text-yellow-500">3 SIXTY PERFUME</span>
+                            </div>
+                            <h3 class="text-xs md:text-sm font-bold text-zinc-100 font-playfair">WHITE ORCHID</h3>
+                            <p class="text-[9px] text-yellow-400/80 mt-1">Sensual, Warm, Oriental, Floral</p>
+                        </div>
+                        <div class="mt-2.5 pt-2 border-t border-zinc-800 flex justify-between items-center text-[11px] md:text-xs">
+                            <span class="text-yellow-400 font-bold">Rp 45.000</span>
+                            <span class="text-zinc-400">50ml</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 13. ROYAL MAN (Parfum) -->
+                <div class="product-card">
+                    <div class="perfume-img-container" onclick="openLightbox('85004.jpg', 'ROYAL MAN Parfum', 'Wangi maskulin dan mewah.', 'Parfum')">
+                        <img src="85004.jpg" alt="ROYAL MAN">
+                    </div>
+                    <div class="p-3 flex-grow flex flex-col justify-between text-center">
+                        <div>
+                            <div class="flex items-center justify-center gap-1.5 mb-1">
+                                <img src="90427.jpg" alt="Logo" class="w-4 h-4 rounded-full border border-yellow-500/40 object-cover">
+                                <span class="text-[8px] tracking-widest uppercase font-semibold text-yellow-500">3 SIXTY PERFUME</span>
+                            </div>
+                            <h3 class="text-xs md:text-sm font-bold text-zinc-100 font-playfair">ROYAL MAN</h3>
+                        </div>
+                        <div class="mt-2.5 pt-2 border-t border-zinc-800 flex justify-between items-center text-[11px] md:text-xs">
+                            <span class="text-yellow-400 font-bold">Rp 45.000</span>
+                            <span class="text-zinc-400">50ml</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 14. RS ONE (Parfum) -->
+                <div class="product-card">
+                    <div class="perfume-img-container" onclick="openLightbox('85013.jpg', 'RS ONE Parfum', 'Eksklusif dan tahan lama.', 'Parfum')">
+                        <img src="85013.jpg" alt="RS ONE">
+                    </div>
+                    <div class="p-3 flex-grow flex flex-col justify-between text-center">
+                        <div>
+                            <div class="flex items-center justify-center gap-1.5 mb-1">
+                                <img src="90427.jpg" alt="Logo" class="w-4 h-4 rounded-full border border-yellow-500/40 object-cover">
+                                <span class="text-[8px] tracking-widest uppercase font-semibold text-yellow-500">3 SIXTY PERFUME</span>
+                            </div>
+                            <h3 class="text-xs md:text-sm font-bold text-zinc-100 font-playfair">RS ONE</h3>
+                        </div>
+                        <div class="mt-2.5 pt-2 border-t border-zinc-800 flex justify-between items-center text-[11px] md:text-xs">
+                            <span class="text-yellow-400 font-bold">Rp 45.000</span>
+                            <span class="text-zinc-400">50ml</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 15. SIGNATURE (Parfum) -->
+                <div class="product-card">
+                    <div class="perfume-img-container" onclick="openLightbox('85498.jpg', 'SIGNATURE Parfum', 'Baccarat Rouge 540 × Creed Aventus', 'Parfum')">
+                        <img src="85498.jpg" alt="SIGNATURE">
+                    </div>
+                    <div class="p-3 flex-grow flex flex-col justify-between text-center">
+                        <div>
+                            <div class="flex items-center justify-center gap-1.5 mb-1">
+                                <img src="90427.jpg" alt="Logo" class="w-4 h-4 rounded-full border border-yellow-500/40 object-cover">
+                                <span class="text-[8px] tracking-widest uppercase font-semibold text-yellow-500">3 SIXTY PERFUME</span>
+                            </div>
+                            <h3 class="text-xs md:text-sm font-bold text-zinc-100 font-playfair">SIGNATURE</h3>
+                            <p class="text-[9px] text-yellow-400/80 mt-1">Baccarat Rouge 540 × Creed Aventus</p>
+                        </div>
+                        <div class="mt-2.5 pt-2 border-t border-zinc-800 flex justify-between items-center text-[11px] md:text-xs">
+                            <span class="text-yellow-400 font-bold">Rp 45.000</span>
+                            <span class="text-zinc-400">50ml</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 16. MEN'S CLUB (Parfum) -->
+                <div class="product-card">
+                    <div class="perfume-img-container" onclick="openLightbox('85009.jpg', 'MENS CLUB Parfum', 'Fresh, Aromatic, Dark Chocolate, Woody', 'Parfum')">
+                        <img src="85009.jpg" alt="MENS CLUB">
+                    </div>
+                    <div class="p-3 flex-grow flex flex-col justify-between text-center">
+                        <div>
+                            <div class="flex items-center justify-center gap-1.5 mb-1">
+                                <img src="90427.jpg" alt="Logo" class="w-4 h-4 rounded-full border border-yellow-500/40 object-cover">
+                                <span class="text-[8px] tracking-widest uppercase font-semibold text-yellow-500">3 SIXTY PERFUME</span>
+                            </div>
+                            <h3 class="text-xs md:text-sm font-bold text-zinc-100 font-playfair">MEN'S CLUB</h3>
+                            <p class="text-[9px] text-yellow-400/80 mt-1">Fresh, Aromatic, Dark Chocolate, Woody</p>
+                        </div>
+                        <div class="mt-2.5 pt-2 border-t border-zinc-800 flex justify-between items-center text-[11px] md:text-xs">
+                            <span class="text-yellow-400 font-bold">Rp 45.000</span>
+                            <span class="text-zinc-400">50ml</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Formulir Pesanan Universal -->
+        <section class="max-w-md mx-auto px-4 py-8 mb-12 reveal-on-scroll" id="order-section">
+            <div class="bg-[#18181b] p-7 rounded-2xl border border-yellow-500/30 shadow-2xl relative">
+                <h2 class="text-2xl font-playfair font-bold text-center mb-6 dark-gradient">Formulir Pesanan</h2>
+                <form id="orderForm" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-yellow-500 mb-1.5">Nama Lengkap</label>
+                        <input type="text" id="nama" required placeholder="Masukkan nama Anda" class="w-full bg-[#121215] border border-zinc-700 rounded-xl px-4 py-3 text-zinc-100 text-sm focus:outline-none focus:border-yellow-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-yellow-500 mb-1.5">Alamat Pengiriman</label>
+                        <textarea id="alamat" required rows="3" placeholder="Jalan, No. Rumah, Kecamatan, Kota" class="w-full bg-[#121215] border border-zinc-700 rounded-xl px-4 py-3 text-zinc-100 text-sm focus:outline-none focus:border-yellow-500"></textarea>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-yellow-500 mb-1.5">Kategori Produk</label>
+                        <select id="kategori" required onchange="updateVarianOpsi()" class="w-full bg-[#121215] border border-zinc-700 rounded-xl px-4 py-3 text-zinc-100 text-sm focus:outline-none focus:border-yellow-500">
+                            <option value="" disabled selected>-- Pilih Kategori --</option>
+                            <option value="Kaos 3 SIXTY">Kaos 3 SIXTY</option>
+                            <option value="Parfum 3 SIXTY">Parfum 3 SIXTY</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-yellow-500 mb-1.5">Pilihan Varian / Warna & Ukuran</label>
+                        <select id="varian" required class="w-full bg-[#121215] border border-zinc-700 rounded-xl px-4 py-3 text-zinc-100 text-sm focus:outline-none focus:border-yellow-500">
+                           <option value="" disabled selected>-- Pilih Kategori Terlebih Dahulu --</option>
+                       </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-yellow-500 mb-1.5">Jumlah Pcs</label>
+                        <input type="number" id="jumlah" min="1" value="1" required class="w-full bg-[#121215] border border-zinc-700 rounded-xl px-4 py-3 text-zinc-100 text-sm focus:outline-none focus:border-yellow-500">
+                    </div>
+                    <button type="submit" class="w-full bg-gold-btn font-bold py-3.5 rounded-xl mt-4 transition shadow-lg text-xs uppercase tracking-wider text-black">Pesan via WhatsApp 📱</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bottom-footer-nav">
+            <div class="max-w-md mx-auto px-4 flex justify-around items-center text-xs">
+                <a href="#" class="text-zinc-400 hover:text-yellow-400 transition flex flex-col items-center gap-1">
+                    <span>🏠</span> Beranda
+                </a>
+                <a href="https://wa.me/6287766334587" target="_blank" class="text-zinc-400 hover:text-yellow-400 transition flex flex-col items-center gap-1">
+                    <span>💬</span> WhatsApp
+                </a>
+                <a href="https://instagram.com/3sixty.scent" target="_blank" class="text-zinc-400 hover:text-yellow-400 transition flex flex-col items-center gap-1">
+                    <span>📸</span> Instagram
+                </a>
+            </div>
+            <p class="text-[10px] text-zinc-600 mt-4 tracking-widest uppercase">&copy; 2026 3 SIXTY Official. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <!-- Modal Lightbox -->
+    <div id="lightboxModal" class="fixed inset-0 bg-black/85 z-50 hidden items-center justify-center p-4 backdrop-blur-md">
+        <div class="bg-[#18181b] border border-yellow-500/30 rounded-2xl max-w-md w-full p-6 relative shadow-2xl">
+            <button onclick="closeLightbox()" class="absolute top-4 right-4 text-zinc-400 hover:text-white bg-zinc-800 w-8 h-8 rounded-full flex items-center justify-center text-lg font-bold z-20">&times;</button>
+            <div class="text-center">
+                <div class="zoom-container mb-4 border border-zinc-800 p-2">
+                    <img id="lightboxImg" src="" alt="Detail" class="w-full max-h-[320px] object-contain mx-auto">
+                </div>
+                <p class="text-[10px] text-yellow-500/80 mb-3 uppercase tracking-wider">💡 Sentuh/arahkan kursor untuk memperbesar</p>
+                <h3 id="lightboxTitle" class="text-xl font-playfair font-bold text-zinc-100 mb-1"></h3>
+                <p id="lightboxDesc" class="text-xs text-zinc-400 mb-6"></p>
+                <button id="lightboxOrderBtn" class="w-full bg-gold-btn font-bold py-3 rounded-xl uppercase text-xs tracking-wider text-black shadow-lg">Pesan Produk Ini ✨</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function enterWebsite() {
+            const overlay = document.getElementById('intro-overlay');
+            const mainContent = document.getElementById('main-content');
+            overlay.style.opacity = '0';
+            setTimeout(() => {
+                overlay.style.visibility = 'hidden';
+                mainContent.style.display = 'block';
+                mainContent.classList.add('popup-reveal');
+                checkScroll();
+            }, 800);
+        }
+        function checkScroll() {
+            const reveals = document.querySelectorAll('.reveal-on-scroll');
+            reveals.forEach(element => {
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+                if (elementTop < windowHeight - 100) { element.classList.add('visible'); }
+            });
+        }
+        window.addEventListener('scroll', checkScroll);
+
+        function updateVarianOpsi() {
+            const kategori = document.getElementById('kategori').value;
+            const varianSelect = document.getElementById('varian');
+            
+            varianSelect.innerHTML = '<option value="" disabled selected>-- Pilih Varian / Warna & Ukuran --</option>';
+
+            if (kategori === 'Kaos 3 SIXTY') {
+                const kaosOptions = [
+                    "Kaos Pink Edition - Size S", "Kaos Pink Edition - Size M", "Kaos Pink Edition - Size L", "Kaos Pink Edition - Size XL", "Kaos Pink Edition - Size XXL",
+                    "Kaos Cream Edition - Size S", "Kaos Cream Edition - Size M", "Kaos Cream Edition - Size L", "Kaos Cream Edition - Size XL", "Kaos Cream Edition - Size XXL",
+                    "Kaos White Edition - Size S", "Kaos White Edition - Size M", "Kaos White Edition - Size L", "Kaos White Edition - Size XL", "Kaos White Edition - Size XXL",
+                    "Kaos Light Blue Edition - Size S", "Kaos Light Blue Edition - Size M", "Kaos Light Blue Edition - Size L", "Kaos Light Blue Edition - Size XL", "Kaos Light Blue Edition - Size XXL",
+                    "Kaos Orange Edition - Size S", "Kaos Orange Edition - Size M", "Kaos Orange Edition - Size L", "Kaos Orange Edition - Size XL", "Kaos Orange Edition - Size XXL",
+                    "Kaos Navy Edition - Size S", "Kaos Navy Edition - Size M", "Kaos Navy Edition - Size L", "Kaos Navy Edition - Size XL", "Kaos Navy Edition - Size XXL",
+                    "Kaos Maroon Edition - Size S", "Kaos Maroon Edition - Size M", "Kaos Maroon Edition - Size L", "Kaos Maroon Edition - Size XL", "Kaos Maroon Edition - Size XXL",
+                    "Kaos Black Edition - Size S", "Kaos Black Edition - Size M", "Kaos Black Edition - Size L", "Kaos Black Edition - Size XL", "Kaos Black Edition - Size XXL"
+                ];
+                kaosOptions.forEach(opt => {
+                    const el = document.createElement('option');
+                    el.value = opt;
+                    el.textContent = opt;
+                    varianSelect.appendChild(el);
+                });
+            } else if (kategori === 'Parfum 3 SIXTY') {
+                const parfumOptions = [
+                    "Parfum AR-ONE", "Parfum BLACK CODE", "Parfum LADY CHARM", "Parfum WHITE ORCHID", 
+                    "Parfum ROYAL MAN", "Parfum RS-ONE", "Parfum SIGNATURE", "Parfum MEN'S CLUB"
+                ];
+                parfumOptions.forEach(opt => {
+                    const el = document.createElement('option');
+                    el.value = opt;
+                    el.textContent = opt.replace("Parfum ", "");
+                    varianSelect.appendChild(el);
+                });
+            }
+        }
+
+        function openLightbox(imgSrc, title, desc, category) {
+            document.getElementById("lightboxImg").src = imgSrc;
+            document.getElementById("lightboxTitle").textContent = title;
+            document.getElementById("lightboxDesc").textContent = desc;
+            document.getElementById("lightboxOrderBtn").onclick = function() {
+                closeLightbox();
+                const katSelect = document.getElementById("kategori");
+                katSelect.value = category === 'Kaos' ? 'Kaos 3 SIXTY' : 'Parfum 3 SIXTY';
+                updateVarianOpsi();
+                
+                const varianSelect = document.getElementById("varian");
+                for (let i = 0; i < varianSelect.options.length; i++) {
+                    if (varianSelect.options[i].text.includes(title.replace(" - Model", "").replace(" - Studio", "").replace(" - Detail", ""))) {
+                        varianSelect.selectedIndex = i;
+                        break;
+                    }
+                }
+                document.getElementById("order-section").scrollIntoView({ behavior: 'smooth' });
+            };
+            document.getElementById("lightboxModal").classList.remove("hidden");
+            document.getElementById("lightboxModal").classList.add("flex");
+        }
+        function closeLightbox() {
+            document.getElementById("lightboxModal").classList.remove("flex");
+            document.getElementById("lightboxModal").classList.add("hidden");
+        }
+
+        document.getElementById('orderForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const nama = document.getElementById('nama').value;
+            const alamat = document.getElementById('alamat').value;
+            const kategori = document.getElementById('kategori').value;
+            const varian = document.getElementById('varian').value;
+            const jumlah = document.getElementById('jumlah').value;
+            const textWa = `Halo 3 SIXTY, saya ingin memesan produk:%0A%0ANama: ${nama}%0AAlamat: ${alamat}%0AKategori: ${kategori}%0AVarian/Warna & Ukuran: ${varian}%0AJumlah: ${jumlah} Pcs%0A%0AMohon info pembayarannya. Terima kasih!`;
+            window.open(`https://wa.me/6287766334587?text=${textWa}`, '_blank');
+        });
+    </script>
+</body>
+</html>
